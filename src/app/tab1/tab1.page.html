@@ -1,17 +1,96 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+  <ion-tab-bar>
+    <ion-tab-button tab="tab1">
+      <ion-button fill="outline"><ion-icon name="home-outline"></ion-icon></ion-button>
+      <!-- <ion-icon name="triangle"></ion-icon>
+        <ion-label>Tab 1</ion-label> -->
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2">
+      <ion-button fill="outline"><ion-icon name="document-attach-outline"></ion-icon></ion-button>
+      <!-- <ion-icon name="ellipse"></ion-icon>
+        <ion-label>Tab 2</ion-label> -->
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3">
+      <ion-button fill="outline"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+      <!-- <ion-icon name="square"></ion-icon>
+        <ion-label>Tab 3</ion-label> -->
+    </ion-tab-button>
+    <ion-tab-button tab="tab4">
+      <ion-button fill="outline"><ion-icon name="person-circle-outline"></ion-icon></ion-button>
+      <!-- <ion-icon name="square"></ion-icon>
+        <ion-label>Tab 3</ion-label> -->
+    </ion-tab-button>
+  </ion-tab-bar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <div class="pad">
+            <ion-avatar><img src="assets/img/user.png"></ion-avatar>
+          </div>
+        </ion-col>
+        <ion-col size="8" align="center">
+          <div class="pad">
+            <ion-text color="primary">
+              <h1>Noticias</h1>
+            </ion-text>
+            <form action="" class="search-bar">
+              <input type="search" name="search" pattern=".*\S.*" required>
+              <button class="search-btn" type="submit">
+                <span>Search</span>
+              </button>
+            </form>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card *ngFor="let c of cards; let i = index" class="pad-card">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <ion-avatar>
+            <img [src]=c.autor class="imagen">
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="9">
+          <div class="name">{{c.nombre}}</div>
+          <div class="date">{{c.fecha}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-card-content class="pad-card-content">
+      <img [src]=c.img />
+      <p class="description">{{c.descripcion}}</p>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3">
+            <ion-chip [outline]="true"><ion-icon
+                name="thumbs-up-outline"></ion-icon>&nbsp;&nbsp;{{c.meGusta}}</ion-chip>
+          </ion-col>
+          <ion-col size="3">
+            <ion-chip [outline]="true"><ion-icon
+                name="thumbs-down-outline"></ion-icon>&nbsp;&nbsp;{{c.noMeGusta}}</ion-chip>
+          </ion-col>
+          <ion-col size="3">
+            <ion-chip [outline]="true"><ion-icon
+                name="chatbox-outline"></ion-icon>&nbsp;&nbsp;{{c.comentarios}}</ion-chip>
+          </ion-col>
+          <ion-col size="3">
+            <ion-chip [outline]="true"><ion-icon
+                name="arrow-redo-outline"></ion-icon>&nbsp;&nbsp;{{c.compartir}}</ion-chip>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

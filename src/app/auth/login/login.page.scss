@@ -1,0 +1,27 @@
+.container-fluid {
+    background-image: url('../../../assets/img/Frame.png');
+    background-size: 100%;
+    background-position: center;
+    // width: 100%;
+    min-height: 100%;
+    // margin-inline: auto;
+    // display: grid;
+    // align-items: center;
+    // justify-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+ion-title{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 75px;
+    letter-spacing: -0.5px;
+    text-align: left;
+    color: #3DEC9D;
+}
+
+label {
+    color: white;
+}

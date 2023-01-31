@@ -1,0 +1,15 @@
+.body {
+    background-image: url('../../assets/img/Frame.png');
+    
+}
+
+.contenedor {
+    // background-color: wheat;
+    // border: 1px solid;
+    width: min(100% - 1em, 60em);
+    height: min(100%);
+    margin-inline: auto;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
